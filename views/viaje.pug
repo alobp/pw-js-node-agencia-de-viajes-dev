@@ -1,0 +1,36 @@
+extends ./layout/index
+
+block contenido 
+    main.container.mt-5 
+        .row 
+            .col-md-5
+                img(src=`/img/destinos_${pagina_viaje.imagen}_ln.jpg`, alt=`imagen viaje ${pagina_viaje.titulo}`, class="img-fluid")
+            .col-md-7 
+                h1 #{pagina_viaje.titulo}
+                p
+                    svg.icon.icon-tabler.icon-tabler-calendar-time(xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewbox='0 0 24 24' stroke-width='1.5' stroke='#a905b6' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                        path(d='M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4')
+                        circle(cx='18' cy='18' r='4')
+                        path(d='M15 3v4')
+                        path(d='M7 3v4')
+                        path(d='M3 11h16')
+                        path(d='M18 16.496v1.504l1 1')
+                    |  #{pagina_viaje.fecha_ida} - #{pagina_viaje.fecha_vuelta}
+                p 
+                    svg.icon.icon-tabler.icon-tabler-users(xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewbox='0 0 24 24' stroke-width='1.5' stroke='#a905b6' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                        circle(cx='9' cy='7' r='4')
+                        path(d='M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2')
+                        path(d='M16 3.13a4 4 0 0 1 0 7.75')
+                        path(d='M21 21v-2a4 4 0 0 0 -3 -3.85')
+                    |  #{pagina_viaje.disponibles} Disponibles
+                p 
+                    svg.icon.icon-tabler.icon-tabler-coin(xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewbox='0 0 24 24' stroke-width='1.5' stroke='#00b341' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                        circle(cx='12' cy='12' r='9')
+                        path(d='M14.8 9a2 2 0 0 0 -1.8 -1h-2a2 2 0 0 0 0 4h2a2 2 0 0 1 0 4h-2a2 2 0 0 1 -1.8 -1')
+                        path(d='M12 6v2m0 8v2')
+                    | #{pagina_viaje.precio} Dolares
+                //- Mostramos la informacion de cada viaje ademas podemos usar el metodo sbustrin para recortar el texto
+                p= pagina_viaje.descripcion

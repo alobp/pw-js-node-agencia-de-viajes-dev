@@ -1,0 +1,11 @@
+extends ./layout/index
+
+block ejemplo_bloque
+    h1 Hola 
+    p desde PUG
+    //- para cachear las variables desde el router, solo asignamos el valorr a la etiqueta
+    p= viajes
+    p #{viajes}
+
+    //- para importar imagenes una ves declarada la carpeta public, ya solo es necesario describir la subcarpeta e imagen
+    img(src="/img/cupon.jpg", alt="")

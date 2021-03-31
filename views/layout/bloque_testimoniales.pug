@@ -1,0 +1,11 @@
+//- esta seccion carga cada uno de los testimoniales
+
+.row.testimoniales 
+    //- p= JSON.stringify(data_testimoniales)
+    each t in data_testimoniales
+        .col-md-6.col-lg-4.mb-4
+            .card 
+                .card-body 
+                    blockquote.blockquote
+                    p.mb-0 #{t.mensaje}
+                    .blockquote-footer #{t.nombre}

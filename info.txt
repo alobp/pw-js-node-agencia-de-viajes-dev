@@ -1,0 +1,51 @@
+Proyecto: Agencia Viajes
+
+Node:
+1) npm init
+
+Express:
+2) npm install express
+
+Para detectar cambios en el codigo y se actualicen autmaticamente usamos:
+Nota: es para la version de desarrollo y no produccion
+3) npm install --save-dev nodemon
+
+4) creamos el main.js con la configuracion de express
+
+5) agregamos el escript de ejecucion en package.json
+
+5.1) ejecutamos el escript desde la terminal: 
+$ npm run dev
+
+6) para poder usar "import/from" de todos los paquetes escribimos:
+"type":"module", en el archivo de package.json arrriba del atributo "author": "Pablo Hdz."
+NOTA: el default es:"type":"commonjs"
+
+7) creamos el archivo de rutas.js en su propia carrpeta
+
+Habilitamos PUG
+8) $ npm install pug
+
+8.1) una ves instalado pug, creamos la carpeta "views" y dentro nuestros archivos *.pug, los cuales van a sustiruir a los HTML
+
+conectar con Base de datos
+9) npm install mysql2 sequelize
+
+
+
+)
+)
+)
+)
+
+
+
+
+
+
+
+
+
+
+
+

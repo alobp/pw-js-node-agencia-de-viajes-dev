@@ -1,0 +1,29 @@
+extends ./layout/index
+
+block contenido 
+    main.container.mt-5 
+        h1.text-center.mt-5 #{pagina}
+
+        blockquote.text-center Lee sobre nuestros clientes y sus experiencias 
+        include ./layout/bloque_testimoniales
+
+        h2.d-block.w-100.text-center Agrega un Testimonial
+        .row.justify-content-center
+            .col-md-8
+                //- action="/testimoniales", redirigimos a la misma pagina con metodo POST, y la agregamos a router
+                form.mb-5(action="/testimoniales", method="POST")
+                    .form-group
+                        label(for='nombre') Nombre
+                        input#nombre.form-control(type='text' placeholder='Escribe tu nombre' name="nombre" value=nombre )
+                    .form-group
+                        label(for='correo') Correo electronico
+                        input#correo.form-control(type='email' placeholder='Escribe tu email' name="correo" value=correo )
+                    .form-group
+                        label(for='mensaje') Mensaje
+                        textarea#mensaje.form-control(rows='3' placeholder='Escribe tu mensaje' name="mensaje")= mensaje
+
+                    if (errores)
+                        each error in errores 
+                            .col.alert.alert-danger.text-center #{error.msj}
+
+                    button.btn.btn-block.btn-primary(type='submit') Enviar 

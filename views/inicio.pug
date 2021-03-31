@@ -1,0 +1,32 @@
+extends ./layout/index
+
+//- Nota los blokes podemos o nop usarlos a conveniencia
+block slider 
+    .slider 
+        h1 Rio de Janeiro
+        em aventura
+
+block contenido 
+    main.container.mt-5 
+        h2.text-center.mb-5 Sobre Nosotros
+        .row.mb-5
+            .col-md-6
+                //- h1= pagina
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat cumque reiciendis ad, beatae iste odio aliquam quia architecto reprehenderit id, minus maiores ea eum perferendis, dolores magnam facere? Possimus, iure!
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste iusto totam dignissimos consectetur suscipit commodi odio consequatur dolorem provident quo adipisci nihil atque sequi sint laudantium, eaque voluptatum quaerat sed.
+            .col-md-6
+                img.img-fluid(src="/img/inicio_nosotros.jpg", alt="imagen nosotros")
+        include ./layout/bloque_viajes
+    .descuento
+        .container 
+            .row 
+                .col-md-6 
+                    .contenido 
+                        h3 5% de Descuento
+                        p.titulo Viaje a Canada 
+                        p.fecha 6 de Julio de 2021 - 6 de Agosto de 2021
+                        p.precio $2,800 USD
+    .container 
+        h2.text-center.my-5 Testimoniales
+        include ./layout/bloque_testimoniales
+    

@@ -1,0 +1,29 @@
+Para hacer el despliegue en HEROKU
+
+1) instalar dependencias de desarrollo, dotenv, esta dependencia nos permitira desplegar variables de entorno (para desarrollo y produccion)
+npm install --save-dev dotenv
+
+2) crear el archivo, .env, en raiz
+con las variables locales para la coneccion a la DB
+
+3) en el archivo de configuracion de la base de datos (/config/db.js), importamos el archivo de variables y las sustituimos a las que teniamos antes explicitamente:
+import dotenv from 'dotenv';
+dotenv.config();
+const {DB_NOMBRE, DB_USER, DB_PASS, DB_HOST, DB_PORT} = dotenv.config().parsed;
+
+4) agregamos la configuracion para heroku en main.js
+const host = process.env.HOST || '0.0.0.0';
+const port = process.env.PORT || 3000;
+app.listen(port, host, () => {
+    console.log(` >>> Se ha levantado el servidor en: http://${host}:${port}`);
+});
+
+5) agregamos un script para produccion en package.json
+"scripts": {
+    "dev": "nodemon main.js",
+    "start": "node main.js"
+},
+
+
+6)
+7)
